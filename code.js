@@ -171,6 +171,9 @@ class Bee {
    function updateBees() { // update loop for game
     //move the bees randomly
     moveBees();
+    if(Number(document.getElementById('hits').innerText)>=1000){
+        document.write("Game Over!");
+    }
     //use a fixed update period
     let period = document.getElementById('periodTimer').value;//modify this to control refresh period
     //update the timer for the next move
