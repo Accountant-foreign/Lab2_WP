@@ -184,8 +184,18 @@ function moveBear(e) {
     moveBees();
     //use a fixed update period
     let period = document.getElementById('periodTimer').value;//modify this to control refresh period
+    //Stop the game and display “Game over!”, when the number of stings reaches 1000.
+    if(document.getElementById('hits').innerText>=1001){
+        clearTimeout();
+    }
     //update the timer for the next move
     updateTimer = setTimeout('updateBees()', period);
+   }
+
+   function clearTimeout(){
+    let temp=document.getElementById('duration').innerText
+    window.location.reload();
+    alert('Game Over! \n Your score: '+temp)
    }
 
    function isHit(defender, offender) {
